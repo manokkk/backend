@@ -16,6 +16,9 @@ def is_valid_domain(domain):
     regex = re.compile(r'^(?:http(s)?://)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$')
     return re.match(regex, domain) is not None
 
+def health_check(request):
+    return JsonResponse({"status": "ok"}, status=200)
+
 @csrf_exempt
 def perform_scan(request):
     if request.method == 'POST':

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
         'corsheaders',
           'scanner',
+      'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
